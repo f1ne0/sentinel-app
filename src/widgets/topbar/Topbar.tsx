@@ -1,4 +1,4 @@
-import { Box, Button, HStack, IconButton, Input, InputGroup, InputLeftElement, Menu, MenuButton, MenuItem, MenuList, Text, useToast } from '@chakra-ui/react';
+import { Box, Button, HStack, IconButton, Input, InputGroup, InputLeftElement, Menu, MenuButton, MenuItem, MenuList, Portal, Text, useToast } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { FiBell, FiCommand, FiSearch, FiUser } from 'react-icons/fi';
 import { analyses } from '../../shared/mock/analyses';
@@ -27,18 +27,22 @@ export function Topbar({ onCommand }: { onCommand: () => void }) {
         <Button leftIcon={<FiCommand />} variant="outline" onClick={onCommand}>Cmd K</Button>
         <Menu>
           <MenuButton as={IconButton} aria-label="Notifications" icon={<FiBell />} variant="outline" />
-          <MenuList zIndex={1500} bg={COLORS.bgElevated} borderColor={COLORS.borderStrong} fontSize="13px">
-            {analyses.slice(0, 3).map((item) => <MenuItem key={item.id} bg="transparent">{item.fileName} · <Text as="span" fontFamily="mono" color={COLORS.info}>{formatHash(item.sha256, 5)}</Text></MenuItem>)}
-          </MenuList>
+          <Portal>
+            <MenuList zIndex={1500} bg={COLORS.bgElevated} borderColor={COLORS.borderStrong} fontSize="13px">
+              {analyses.slice(0, 3).map((item) => <MenuItem key={item.id} bg="transparent">{item.fileName} · <Text as="span" fontFamily="mono" color={COLORS.info}>{formatHash(item.sha256, 5)}</Text></MenuItem>)}
+            </MenuList>
+          </Portal>
         </Menu>
         <Menu>
           <MenuButton as={Button} leftIcon={<FiUser />} variant="outline">
             <Box display={{ base: 'none', lg: 'block' }}><Text fontSize="13px">Аналитик</Text></Box>
           </MenuButton>
-          <MenuList zIndex={1500} bg={COLORS.bgElevated} borderColor={COLORS.borderStrong} fontSize="13px">
-            <MenuItem bg="transparent">Кенжебаев Равшанбек · SOC Tier 2</MenuItem>
-            <MenuItem bg="transparent">Форензик-рабочее пространство</MenuItem>
-          </MenuList>
+          <Portal>
+            <MenuList zIndex={1500} bg={COLORS.bgElevated} borderColor={COLORS.borderStrong} fontSize="13px">
+              <MenuItem bg="transparent">Кенжебаев Равшанбек · SOC Tier 2</MenuItem>
+              <MenuItem bg="transparent">Форензик-рабочее пространство</MenuItem>
+            </MenuList>
+          </Portal>
         </Menu>
       </HStack>
     </HStack>
