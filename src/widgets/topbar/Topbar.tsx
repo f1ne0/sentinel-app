@@ -27,7 +27,7 @@ export function Topbar({ onCommand }: { onCommand: () => void }) {
         <Button leftIcon={<FiCommand />} variant="outline" onClick={onCommand}>Cmd K</Button>
         <Menu>
           <MenuButton as={IconButton} aria-label="Notifications" icon={<FiBell />} variant="outline" />
-          <MenuList bg={COLORS.bgElevated} borderColor={COLORS.borderStrong} fontSize="13px">
+          <MenuList zIndex={1500} bg={COLORS.bgElevated} borderColor={COLORS.borderStrong} fontSize="13px">
             {analyses.slice(0, 3).map((item) => <MenuItem key={item.id} bg="transparent">{item.fileName} · <Text as="span" fontFamily="mono" color={COLORS.info}>{formatHash(item.sha256, 5)}</Text></MenuItem>)}
           </MenuList>
         </Menu>
@@ -35,7 +35,7 @@ export function Topbar({ onCommand }: { onCommand: () => void }) {
           <MenuButton as={Button} leftIcon={<FiUser />} variant="outline">
             <Box display={{ base: 'none', lg: 'block' }}><Text fontSize="13px">Аналитик</Text></Box>
           </MenuButton>
-          <MenuList bg={COLORS.bgElevated} borderColor={COLORS.borderStrong} fontSize="13px">
+          <MenuList zIndex={1500} bg={COLORS.bgElevated} borderColor={COLORS.borderStrong} fontSize="13px">
             <MenuItem bg="transparent">Кенжебаев Равшанбек · SOC Tier 2</MenuItem>
             <MenuItem bg="transparent">Форензик-рабочее пространство</MenuItem>
           </MenuList>
