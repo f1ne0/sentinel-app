@@ -36,7 +36,7 @@ export function Topbar({ onCommand }: { onCommand: () => void }) {
             <Box display={{ base: 'none', lg: 'block' }}><Text fontSize="13px">Аналитик</Text></Box>
           </MenuButton>
           <MenuList bg={COLORS.bgElevated} borderColor={COLORS.borderStrong} fontSize="13px">
-            <MenuItem bg="transparent">M. Karimov · SOC Tier 2</MenuItem>
+            <MenuItem bg="transparent">Кенжебаев Равшанбек · SOC Tier 2</MenuItem>
             <MenuItem bg="transparent">Форензик-рабочее пространство</MenuItem>
           </MenuList>
         </Menu>
