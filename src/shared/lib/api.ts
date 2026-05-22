@@ -83,7 +83,7 @@ export const analyzeSample = async (file: File, onProgress: (progress: UploadPro
     confidence: Math.min(99, 68 + (file.name.length % 25)),
     createdAt: new Date().toISOString(),
     source: 'manual_upload',
-    explanation: 'Mock-анализ завершён без чтения или исполнения содержимого файла. SENTINEL использовал только метаданные файла и имитацию статического, динамического и ML-этапов для демонстрации дипломного проекта.',
+    explanation: 'Mock-анализ завершён без чтения или исполнения содержимого файла. SENTINEL использовал только метаданные файла и имитацию статического, динамического и ML-этапов для демонстрации индивидуального проекта.',
   };
   uploadedAnalyses.unshift(result);
   return result;

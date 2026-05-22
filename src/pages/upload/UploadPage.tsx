@@ -57,7 +57,7 @@ export function UploadPage() {
           <VStack spacing="14px">
             <FiUploadCloud size={54} color={COLORS.info} />
             <Heading size="md" fontWeight="500">Перетащите образец или выберите файл</Heading>
-            <Text color={COLORS.textSecondary}>Подходит любой файл. SENTINEL использует только file.name и file.size для дипломной симуляции.</Text>
+            <Text color={COLORS.textSecondary}>Подходит любой файл. SENTINEL использует только file.name и file.size для симуляции в рамках индивидуального проекта.</Text>
           </VStack>
         </GlassCard>
       )}
